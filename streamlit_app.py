@@ -605,7 +605,7 @@ def generate_pdf(df, metrics_dict, forecast_prophet, forecast_xgb,
                             f"${row['yhat']:,.2f}", f"${row['yhat_lower']:,.2f}",
                             f"${row['yhat_upper']:,.2f}"])
         story.append(make_table(fc_data, header_color="#AD1457",
-                                row_colors=["#FCE4EC","white"]))
+                                row_colors=["#FCE4EC","#FFFFFF"]))
         story.append(Spacer(1, 10))
 
     if forecast_xgb is not None:
