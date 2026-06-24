@@ -532,7 +532,7 @@ def generate_pdf(df, metrics_dict, forecast_prophet, forecast_xgb,
 
     def make_table(data, header_color="#1565C0", row_colors=None):
         t = Table(data)
-        row_colors = row_colors or ["#EEF2FF", "white"]
+        row_colors = row_colors or ["#EEF2FF", "#FFFFFF"]
         t.setStyle(TableStyle([
             ("BACKGROUND",     (0,0), (-1,0), colors.HexColor(header_color)),
             ("TEXTCOLOR",      (0,0), (-1,0), colors.white),
@@ -615,7 +615,7 @@ def generate_pdf(df, metrics_dict, forecast_prophet, forecast_xgb,
             fc_data2.append([str(i+1), row["ds"].strftime("%Y-%m-%d"),
                              f"${row['yhat']:,.2f}"])
         story.append(make_table(fc_data2, header_color="#E65100",
-                                row_colors=["#FBE9E7","white"]))
+                                row_colors=["#FBE9E7","#FFFFFF"]))
 
     doc.build(story)
     buf.seek(0)
